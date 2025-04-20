@@ -34,7 +34,7 @@ if not os.path.exists(text_file):
 
 # For loop that iterates through text file
 # and adds words in the range to a new list
-with open(text_file) as big_list:
+with open(text_file, encoding="utf-8") as big_list:
     in_range_list = []
     for word in big_list:
         if minchar <= len(word.strip()) <= maxchar:
@@ -53,7 +53,7 @@ while os.path.exists(filename):
 # For Loop that iterates through in_range_list
 # and adds it to a new text file, thus creating
 # the required word bank.
-with open(filename, "w") as wordbank:
+with open(filename, "w", encoding="utf-8") as wordbank:
     for word in in_range_list:
         wordbank.write(word + "\n")
     print(f"{filename} has been created at {os.path.abspath(filename)}")
